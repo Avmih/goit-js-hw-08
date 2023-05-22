@@ -505,6 +505,41 @@ function hmrAcceptRun(bundle, id) {
 },{}],"6XVkV":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 // Add imports above this line
+/*import { galleryItems } from './gallery-items';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import '../css/common.css';
+import '../css/01-gallery.css';
+
+
+const createItemsMarkup = galleryItems
+  .map(({ preview, original, description }) => {
+    return `
+    <a class="gallery__item" href="${original}">
+    <img class="gallery__image" src="${preview}" alt="${description}" />
+  </a>
+      `;
+  })
+  .join('');
+
+const alleryContainerEl = document.querySelector('.gallery');
+alleryContainerEl.insertAdjacentHTML('beforeend', createItemsMarkup);
+ new SimpleLightbox('.gallery a', {
+  scrollZoom: false,
+  captionDelay: 250,
+  captionsData: 'alt',
+  doubleTapZoom: 1,
+});
+alleryContainerEl.addEventListener('click', event => {
+  event.preventDefault();
+  if (!event.target.classList.contains('gallery__image')) {
+    return;
+  }
+});
+
+// Change code below this line
+
+console.log(galleryItems);*/ // Add imports above this line
 var _galleryItems = require("./gallery-items");
 var _simplelightbox = require("simplelightbox");
 var _simplelightboxDefault = parcelHelpers.interopDefault(_simplelightbox);
@@ -513,24 +548,23 @@ var _commonCss = require("../css/common.css");
 var _01GalleryCss = require("../css/01-gallery.css");
 const createItemsMarkup = (0, _galleryItems.galleryItems).map(({ preview , original , description  })=>{
     return `
-    <a class="gallery__item" href="${original}">
-    <img class="gallery__image" src="${preview}" alt="${description}" />
-  </a>
-      `;
+      <a class="gallery__item" href="${original}">
+        <img class="gallery__image" src="${preview}" alt="${description}" />
+      </a>
+    `;
 }).join("");
-const alleryContainerEl = document.querySelector(".gallery");
-alleryContainerEl.insertAdjacentHTML("beforeend", createItemsMarkup);
-let lightbox = new (0, _simplelightboxDefault.default)(".gallery a", {
+const galleryContainerEl = document.querySelector(".gallery");
+galleryContainerEl.insertAdjacentHTML("beforeend", createItemsMarkup);
+new (0, _simplelightboxDefault.default)(".gallery a", {
     scrollZoom: false,
     captionDelay: 250,
     captionsData: "alt",
     doubleTapZoom: 1
 });
-alleryContainerEl.addEventListener("click", (event)=>{
+galleryContainerEl.addEventListener("click", (event)=>{
     event.preventDefault();
     if (!event.target.classList.contains("gallery__image")) return;
 });
-// Change code below this line
 console.log((0, _galleryItems.galleryItems));
 
 },{"./gallery-items":"9C7dK","simplelightbox":"9ydBq","simplelightbox/dist/simple-lightbox.min.css":"kaxSc","../css/common.css":"97fCK","../css/01-gallery.css":"h468F","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9C7dK":[function(require,module,exports) {
